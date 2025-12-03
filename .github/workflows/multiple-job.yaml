@@ -19,6 +19,7 @@ jobs:
     test_job:
         runs-on: ubuntu-latest
         steps:
+        - uses: actions/checkout@v6
         - name: sleep for 10 seconds
           run: sleep 10
 
@@ -27,7 +28,9 @@ jobs:
 
     deploy_job:
         runs-on: ubuntu-latest
+        
         steps:
+        - uses: actions/checkout@v6
         - name: Read the file
           run: cat dragon.txt
 
