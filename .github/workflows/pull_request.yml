@@ -1,0 +1,10 @@
+name: Pull Request Example
+
+on:
+  pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This runs when someone creates a Pull Request to MAIN"
