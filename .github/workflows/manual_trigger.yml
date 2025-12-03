@@ -1,0 +1,10 @@
+name: Manual Run Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-manually:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job runs only when you manually click RUN WORKFLOW"
