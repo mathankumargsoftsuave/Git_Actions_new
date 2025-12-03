@@ -10,18 +10,9 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+    - name: Execute the sh file
+      run: |
+         chmod +x ascii.sh
+         ./ascii.sh
 
-    - name: install cowsay program
-      run: sudo apt-get install cowsay -y
-
-    - name: Execute Cowsay CMD
-      run: cowsay -f dragon "Run for cover, I am a Dragon.....Uicjidn" >> dragon.txt
-
-    - name: test file Exists
-      run: grep -i "dragon" dragon.txt
-
-    - name: Read file
-      run: cat dragon.txt
-
-    - name: List repo files
-      run: ls
+    
