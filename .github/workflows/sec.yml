@@ -1,0 +1,10 @@
+name: My first workflow
+
+on: push
+
+jobs:
+    Env_val:
+        runs-on: ubuntu-latest
+        steps:
+        - name: disply the env variable and then values
+          run: echo "this is ${{ secrets.NAME}}"
