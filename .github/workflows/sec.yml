@@ -7,4 +7,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: disply the env variable and then values
-          run: echo "this is ${{ vars.NAME }} byeeeeeeee"
+          run: echo "this is ${{ vars.NAME }} and my email id is ${{ secrets.EMAIL }} byeeeeeeee"
