@@ -3,10 +3,14 @@ name: Run Multiple job
 on: push
 
 jobs:
+    
     build_job:
+        
         runs-on: ubuntu-latest
+        
 
         steps:
+        - uses: actions/checkout@v6
         - name: Install cowsay program
           run: sudo apt-get install cowsay -y
         - name: Execute the cowsay CMD
