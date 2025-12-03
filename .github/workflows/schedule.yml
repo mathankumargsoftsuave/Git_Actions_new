@@ -1,0 +1,11 @@
+name: Cron Job
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"
+
+jobs:
+  every-two-minutes:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job runs EVERY 2 MINUTES"
