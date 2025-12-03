@@ -19,7 +19,7 @@ jobs:
         env:
             MY_PASS: Mathan@27
         run: |
-         echo 'This is my password $MY_PASS'
+         echo 'This is my password' $MY_PASS
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
