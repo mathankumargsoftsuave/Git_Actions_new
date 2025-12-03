@@ -1,0 +1,30 @@
+name: Multi Input Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+        type: string
+      age:
+        description: 'Age of the person'
+        default: '25'
+        required: true
+        type: number
+      city:
+        description: 'City where person lives'
+        default: 'Chennai'
+        required: true
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display inputs
+        run: |
+          echo "Hello ${{ inputs.name }}!"
+          echo "Your age is ${{ inputs.age }}"
+          echo "You live in ${{ inputs.city }}"
