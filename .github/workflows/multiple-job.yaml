@@ -15,7 +15,11 @@ jobs:
 
       - name: Execute the cowsay CMD
         run: cowsay -f dragon "Run for cover, I am a Dragon.....Uicjidn" >> dragon.txt
-
+      - name: display my password
+        env:
+            MY_PASS: Mathan@27
+        run: |
+         echo 'This is my password $MY_PASS'
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
