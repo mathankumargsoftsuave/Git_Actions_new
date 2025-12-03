@@ -17,9 +17,9 @@ jobs:
         run: cowsay -f dragon "Run for cover, I am a Dragon.....Uicjidn" >> dragon.txt
       - name: display my password
         env:
-            MY_PASS: Mathan@27
+            MY_PASS: ${{ secrets.PASS_WORD }}
         run: |
-         echo 'This is my password' $MY_PASS
+         run: echo "My password is: $MY_PASS"
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
