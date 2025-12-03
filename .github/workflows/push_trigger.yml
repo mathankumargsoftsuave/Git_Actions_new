@@ -1,0 +1,10 @@
+name: Push Example
+
+on:
+  push
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This runs when you push code into MAIN branch!"
