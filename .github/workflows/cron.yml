@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: This is my cron job event
-        run: echo "My cron job ran successfully"
+        run: echo "My workflow dispatch job run successfully"
 
         
