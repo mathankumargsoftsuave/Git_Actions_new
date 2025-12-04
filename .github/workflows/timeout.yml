@@ -8,4 +8,4 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Install dependencies
-        run: sleep 400  # 6 minutes (job will timeout before completion)
+        run: sleep 400  
