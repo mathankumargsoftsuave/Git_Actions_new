@@ -1,0 +1,15 @@
+name: Safe Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false   
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to production..."
