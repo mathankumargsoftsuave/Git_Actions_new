@@ -1,0 +1,28 @@
+name: Multi Job Deploy
+
+on:
+  push:
+    branches: [ main, hotfix ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Building..."
+
+  deploy-main:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: true
+    steps:
+      - run: echo "Deploying Main Branch"
+
+  deploy-hotfix:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: true
+    steps:
+      - run: echo "Deploying Hotfix Branch"
