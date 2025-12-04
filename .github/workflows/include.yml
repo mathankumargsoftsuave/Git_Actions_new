@@ -1,4 +1,4 @@
-name: Matrix Exclude Example
+name: Matrix Include Example
 
 on: push
 
@@ -8,12 +8,15 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        node: [16, 18]
+        os: [ubuntu-latest, windows-latest]   # default matrix
+        node: [16, 18]                        # default Node versions
 
-        exclude:
+        # ➕ Include extra custom combinations
+        include:
+          - os: ubuntu-latest
+            node: 20
           - os: windows-latest
-            node: 18   
+            node: 14
 
     steps:
       - uses: actions/checkout@v4
