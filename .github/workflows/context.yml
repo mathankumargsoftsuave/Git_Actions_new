@@ -1,0 +1,15 @@
+name: Context Example
+
+on:
+  push:
+
+jobs:
+  context-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Job Context
+        run: echo "Job Context is ${{ toJson(job) }}"
+
+
+
+            
