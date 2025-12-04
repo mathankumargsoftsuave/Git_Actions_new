@@ -1,8 +1,9 @@
 name: Cron Job Event
 
 on:
-  schedule:
-    - cron: "*/1 * * * *" 
+    workflow_dispatch
+#   schedule:
+#     - cron: "*/1 * * * *" 
 
 jobs:
   cron_job:
