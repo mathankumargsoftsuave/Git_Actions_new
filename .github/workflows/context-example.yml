@@ -1,0 +1,31 @@
+name: Context Example
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  show-contexts:
+    runs-on: ubuntu-latest
+    env:
+      APP_ENV: development
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Show GitHub context
+      - name: Show GitHub context
+        run: |
+          echo "Repository name: ${{ github.repository }}"
+          echo "Actor (who pushed): ${{ github.actor }}"
+          echo "Event name: ${{ github.event_name }}"
+
+      # Step 3: Show Environment variable
+      - name: Show Env context
+        run: echo "App environment:"
+
+      # Step 4: Show Secret
+      - name: Show Secret context
+        run: echo "Docker username is ${{ secrets.DOCKERHUB_USERNAME }}"
