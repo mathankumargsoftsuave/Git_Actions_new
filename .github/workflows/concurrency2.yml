@@ -3,13 +3,18 @@ name: Fast Deployment
 on:
   push:
     branches: [ main ]
-
-concurrency:
-  group: production-deploy
-  cancel-in-progress: true   
+   
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running latest deployment..."
+  deploy2:
+    needs: deploy
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running latest deployment..."
