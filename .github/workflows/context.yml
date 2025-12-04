@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Show Job Context
         run: echo "Job Context is ${{ toJson(job) }}"
+      - name: Show Job steps
+        run: echo "Job Context is ${{ toJson(steps) }}"
 
 
 
