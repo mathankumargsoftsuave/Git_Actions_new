@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency:
       group: production-deploy
-      cancel-in-progress: true
+      cancel-in-progress: false
     steps:
       - run: echo "Deploying Main Branch"
 
@@ -26,3 +26,4 @@ jobs:
       cancel-in-progress: true
     steps:
       - run: echo "Deploying Hotfix Branch"
+
