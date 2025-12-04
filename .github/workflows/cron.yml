@@ -1,0 +1,12 @@
+name: Cron Job Even
+
+on:
+    schedule:
+        - cron: "*/1 * * * *"
+jobs:
+    Cron_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: This is my cron job even
+          run: echo 'My cron job run successfully'
+        
